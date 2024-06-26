@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakes 'n' Bakery</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #606fe3;
+            color: #333;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff6f61;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            background-color: #ff856d;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .showcase {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px 0;
+        }
+        .showcase img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .showcase h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+        .showcase p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            color: white;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to CakeSamBakes !</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#timings">Timings</a>
+        <a href="#offers">Offers</a>
+        <a href="#orderonline">Order-Online</a>
+    </nav>
+    <div class="container">
+        <div class="showcase" id="home">
+            <div>
+                <h2>Delicious Cakes</h2>
+                <p>Experience the taste of our freshly baked cakes, made with the finest ingredients. Perfect for every occasion.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZXN8ZW58MHx8MHx8fDA%3D" alt="Delicious Cakes">
+        </div>
+        <div class="showcase">
+            <img src="https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29va2llcyUyMGNob2NvbGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Cookies">
+            <div>
+                <h2>Yummy Cookies</h2>
+                <p>Our cookies are baked to perfection, offering a crunchy and delightful treat for all ages.</p>
+            </div>
+        </div>
+        <div class="showcase">
+            <div>
+                <h2>Ice Creams</h2>
+                <p>Cool off with our creamy and flavorful ice creams, available in a variety of mouth-watering flavors.</p>
+            </div>
+            <img src="https://plus.unsplash.com/premium_photo-1678198786424-c2cc6593f59c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aWNlJTIwY3JlYW18ZW58MHx8MHx8fDA%3D" alt="Ice Creams">
+        </div>
+        <div class="showcase" id="about">
+            <div>
+                <h2>About Us</h2>
+                <p>We are a family-owned bakery dedicated to making the most delicious baked goods with love and care.</p>
+            </div>
+        </div>
+        <div class="showcase" id="services">
+            <div>
+                <h2>Services</h2>
+                <p>We offer custom cake orders, catering services, and special bakery classes for enthusiasts.</p>
+            </div>
+        </div>
+        <div class="showcase" id="timings">
+            <div>
+                <h2>Timings</h2>
+                <p>We are open from 8 AM to 8 PM, Monday to Saturday. Come visit us and enjoy our treats!</p>
+            </div>
+        </div>
+        <div class="showcase" id="offers">
+            <div>
+                <h2>Offers</h2>
+                <p>Don't miss out on our special discounts and offers. Follow us on social media for the latest updates.</p>
+            </div>
+        </div>
+        <div class="showcase" id="contact">
+            <div>
+                <h2>Contact</h2>
+                <p>Reach out to us at (123) 456-7890 or email us at info@cakesnbakery.com.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 CakeSamBakes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
