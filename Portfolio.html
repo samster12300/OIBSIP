@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameer Kothare's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(to bottom right, #240a3d, #b2b1b6);
+      color: #fff;
+    }
+
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      animation: fadeIn 1s ease;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin-left: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+      animation: fadeIn 1.5s ease;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+        main {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+      align-items: center;
+    }
+
+    .personal-story {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .personal-story h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    .personal-story p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .personal-story a {
+      color: #fff;
+      text-decoration: none;
+      background-color: #0077b5;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      animation: fadeIn 2s ease;
+    }
+
+    .personal-story a:hover {
+      background-color: #005582;
+    }
+
+    .personal-image {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      animation: slideIn 1s ease;
+    }
+
+    .personal-image img {
+      width:100%;
+      height: 100%;
+      object-fit: scale-down;
+    
+      transition: transform 0.5s ease;
+    }
+
+    .personal-image:hover img {
+      transform: scale(1.1);
+    }
+
+    
+    .skills-section {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .skills-section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 40px;
+      width: 100%;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      animation: slideIn 1s ease;
+    }
+
+    .skill-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+    }
+
+    .skill-item h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .skill-item p {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    
+    .portfolio-section {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .portfolio-section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 40px;
+      width: 100%;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      animation: slideIn 1s ease;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(142, 45, 226, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .portfolio-overlay p {
+      font-size: 16px;
+      text-align: center;
+      animation: fadeIn 0.7s ease;
+    }
+
+    
+    .contact-section {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .contact-section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease;
+    }
+
+    .contact-form {
+      width: 60%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      grid-column: 1 / -1;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      grid-column: 1 / -1;
+      background-color: #8E2DE2;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #4A00E0;
+    }
+
+
+    footer {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      text-align: center;
+      margin-top: 60px;
+      animation: fadeIn 1s ease;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .personal-image {
+        height: 300px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact
+       
+    @media(max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .personal-image {
+    height: 300px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Sameer Kothare</a>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="www.linkedin.com/in/sameer-kothare-98584a207" target="_blank">LinkedIn</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="personal-story">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Hi, I'm Sameer Kothare, a passionate designer and creative problem-solver. Through my work, I strive to bring unique and captivating experiences to life. With a strong focus on user-centric design, I combine my technical expertise with a deep understanding of human behavior to create visually stunning and highly functional digital solutions.</p>
+      <a href="www.linkedin.com/in/sameer-kothare-98584a207" target="_blank">Connect with me on LinkedIn</a>
+    </div>
+    <div class="personal-image">
+      <img src="k.jpeg" alt="Sameer Kothare">
+    </div>
+
+    <div id="portfolio" class="portfolio-section">
+      <h2>My Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://i.pinimg.com/236x/34/1b/da/341bdaf63195d374391e05cab8bd415a.jpg" alt="Project 1">
+          <div class="portfolio-overlay">
+            <h3>E-commerce Website</h3>
+            <p>An E-commerce website where users can browse and purchase products. Implements features such as product listings, shopping carts, and secure payment gateways.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://i.pinimg.com/236x/d9/7f/b8/d97fb8436e2e5b97a8a0cea9f21c0481.jpg" alt="Project 2">
+          <div class="portfolio-overlay">
+            <h3>Social Media Dashboard</h3>
+            <p>A dashboard that aggregates social media feeds and analytics from various platforms. Provides users with insights and the ability to manage their social media accounts in one place.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://i.pinimg.com/474x/21/5a/c1/215ac1f4a9e135ac8ebbf18f43a28eff.jpg" alt="Project 3">
+          <div class="portfolio-overlay">
+            <h3>Weather App</h3>
+            <p>Weather application that displays real-time weather information based on the user's location or a specified location. Utilizes APIs to fetch weather data and create a user-friendly interface.</p>
+          </div>
+        </div>
+        <!-- Add more portfolio items as needed -->
+      </div>
+    </div>
+
+    <div id="about" class="skills-section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <img src="html.png" alt="Skill Icon">
+          <h3>HTML</h3>
+          <p>Hyper Text MarkUp Language</p>
+        </div>
+        <div class="skill-item">
+          <img src="css.png" alt="Skill Icon">
+          <h3>CSS</h3>
+          <p>Cascading Styles Sheet</p>
+        </div>
+        <div class="skill-item">
+          <img src="js.png" alt="Skill Icon">
+          <h3>JS</h3>
+          <p>JavaScript</p>
+        </div>
+        <div class="skill-item">
+          <img src="r.png" alt="Skill Icon">
+          <h3>React JS</h3>
+          
+        </div>
+        <div class="skill-item">
+          <img src="us.png" alt="Skill Icon">
+          <h3>UI/UX</h3>
+          
+        </div>
+        <div class="skill-item">
+          <img src="d.png" alt="Skill Icon">
+          <h3>Python</h3>
+        
+        </div>
+    
+      </div>
+    </div>
+
+    <div id="contact" class="contact-section">
+      <h2>Get in Touch</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Sameer Kothare. All rights reserved.</p>
+  </footer>
+</body>
+</html>
