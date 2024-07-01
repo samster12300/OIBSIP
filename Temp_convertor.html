@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://images.pexels.com/photos/12719060/pexels-photo-12719060.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load') no-repeat center center fixed;
+            background-size: cover;
+            color:white;
+            border-color: #0056b3;
+            border-radius:3px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .result.celsius {
+            background:black;
+        }
+        .result.fahrenheit {
+            background:black;
+        }
+        .result.kelvin {
+            background:black;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            input, select, button {
+                padding: 8px;
+            }
+        }
+        body h1{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <input type="number" id="temperature" placeholder="Enter temperature">
+        <select id="unit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <button onclick="convertTemperature()">Convert</button>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+        function convertTemperature() {
+            const tempInput = document.getElementById('temperature').value;
+            const unit = document.getElementById('unit').value;
+            const resultDiv = document.getElementById('result');
+            let convertedTemp = '';
+            let resultUnit = '';
+            let resultClass = '';
+
+            if (!tempInput || isNaN(tempInput)) {
+                alert('Please enter a valid number');
+                return;
+            }
+
+            const temp = parseFloat(tempInput);
+
+            switch (unit) {
+                case 'celsius':
+                    convertedTemp = `${(temp * 9/5) + 32} °F / ${(temp + 273.15)} K`;
+                    resultUnit = 'Celsius';
+                    resultClass = 'celsius';
+                    break;
+                case 'fahrenheit':
+                    convertedTemp = `${((temp - 32) * 5/9)} °C / ${((temp - 32) * 5/9 + 273.15)} K`;
+                    resultUnit = 'Fahrenheit';
+                    resultClass = 'fahrenheit';
+                    break;
+                case 'kelvin':
+                    convertedTemp = `${(temp - 273.15)} °C / ${(temp * 9/5 - 459.67)} °F`;
+                    resultUnit = 'Kelvin';
+                    resultClass = 'kelvin';
+                    break;
+            }
+
+            resultDiv.className = `result ${resultClass}`;
+            resultDiv.textContent = `Converted Temperature: ${convertedTemp}`;
+        }
+    </script>
+</body>
+</html>
